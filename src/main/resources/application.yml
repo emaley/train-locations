@@ -1,0 +1,28 @@
+application:
+  description: @project.description@
+  version: @project.version@
+
+spring:
+  application:
+    name: @project.artifactId@
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  messages:
+    basename: validation
+
+server:
+  port: 8080
+
+user:
+  oauth:
+    clientId: myClientId
+    clientSecret: clientSecret
+    redirectUris: http://localhost:8082/login/oauth2/code/
