@@ -52,8 +52,10 @@ public class TrainTimetableService {
         Train trainRequest;
         if (trainOptional.isPresent()) {
             trainRequest = trainOptional.get();
-            trainRequest.setGpsLatitude(locationRequest.getCoordinates()[0]);
-            trainRequest.setGpsLongitude(locationRequest.getCoordinates()[1]);
+            if (locationRequest.getCoordinates() != null) {
+                trainRequest.setGpsLatitude(locationRequest.getCoordinates()[0]);
+                trainRequest.setGpsLongitude(locationRequest.getCoordinates()[1]);
+            }
             trainRequest.setTrainName(locationRequest.getName());
             trainRequest.setDestination(locationRequest.getDestination());
             trainRequest.setSpeed(locationRequest.getSpeed());
