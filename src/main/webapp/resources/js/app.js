@@ -24,8 +24,3 @@ function disconnect() {
     setConnected(false);
     console.log("Disconnected");
 }
-
-// function sendName() {
-//     var name = document.getElementById('name').value;
-//     stompClient.send("/app/trainlocations", {}, JSON.stringify({ 'name': name }));
-// }
