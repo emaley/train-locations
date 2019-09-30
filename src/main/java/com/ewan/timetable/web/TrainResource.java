@@ -27,11 +27,16 @@ public class TrainResource {
 
     @RequestMapping(method = RequestMethod.GET, path="")
     @ApiOperation(value = "Get all train locations",
-            notes = "Returns 200 on success")
+            notes = "Returns 200 on success or 204 for no content")
     public ResponseEntity<List<LocationResponse>> getLocations() {
         log.info("Get train locations");
 
-        return ResponseEntity.ok(trainTimetableService.getList());
+        List<LocationResponse> locations = trainTimetableService.getList();
+        if (locations.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.ok(locations);
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "{trainId}", consumes = MediaType.APPLICATION_JSON_VALUE)

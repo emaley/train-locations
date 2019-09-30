@@ -32,7 +32,7 @@
   <table id="example" class="display" width="100%">
       <tr>
           <th>Name</th>
-          <th>GPS</th>
+          <th>GPS Coordinates</th>
           <th>Destination</th>
           <th>Speed</th>
       </tr>
@@ -41,7 +41,6 @@
   <script src="${contextPath}/resources/js/stomp.js"></script>
   <script src="${contextPath}/resources/js/app.js"></script>
   <script src="${contextPath}/resources/js/data.js"></script>
-<%--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--%>
   <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -52,16 +52,16 @@ public class TrainTimetableService {
         Train trainRequest;
         if (trainOptional.isPresent()) {
             trainRequest = trainOptional.get();
-            trainRequest.setGpsLatitude(locationRequest.getGpsCoordinates()[0]);
-            trainRequest.setGpsLongitude(locationRequest.getGpsCoordinates()[1]);
+            trainRequest.setGpsLatitude(locationRequest.getCoordinates()[0]);
+            trainRequest.setGpsLongitude(locationRequest.getCoordinates()[1]);
             trainRequest.setTrainName(locationRequest.getName());
             trainRequest.setDestination(locationRequest.getDestination());
             trainRequest.setSpeed(locationRequest.getSpeed());
         } else {
             trainRequest = Train.builder()
                     .trainId(trainId)
-                    .gpsLatitude(locationRequest.getGpsCoordinates()[0])
-                    .gpsLongitude(locationRequest.getGpsCoordinates()[1])
+                    .gpsLatitude(locationRequest.getCoordinates()[0])
+                    .gpsLongitude(locationRequest.getCoordinates()[1])
                     .trainName(locationRequest.getName())
                     .destination(locationRequest.getDestination())
                     .speed(locationRequest.getSpeed())
@@ -85,7 +85,7 @@ public class TrainTimetableService {
         return LocationResponse.builder()
                 .trainId(train.getTrainId())
                 .name(train.getTrainName())
-                .gpsCoordinates(new BigDecimal[] {train.getGpsLatitude(), train.getGpsLongitude()})
+                .coordinates(new BigDecimal[] {train.getGpsLatitude(), train.getGpsLongitude()})
                 .destination(train.getDestination())
                 .speed(train.getSpeed())
                 .build();

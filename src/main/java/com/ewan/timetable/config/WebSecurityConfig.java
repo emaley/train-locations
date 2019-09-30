@@ -1,4 +1,4 @@
-package com.ewan.timetable;
+package com.ewan.timetable.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

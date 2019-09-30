@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 public class LocationRequest {
     @ApiModelProperty(value = "Train coordinates", required = true, example = "[123.11, 122.2]")
     @NotNull
-    BigDecimal[] gpsCoordinates;
+    BigDecimal[] coordinates;
 
     @ApiModelProperty(value = "Train name", required = true, example = "Thomas")
     @NotNull

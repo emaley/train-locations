@@ -18,7 +18,7 @@ function createRow(rowData) {
     var trElement = "<tr id='trainid" + rowData.trainId +  "'>";
 
     trElement += "<td>" + rowData.name + "</td>";
-    trElement += "<td>" + rowData.gpsCoordinates + "</td>";
+    trElement += "<td>" + rowData.coordinates + "</td>";
     trElement += "<td>" + rowData.destination + "</td>";
     trElement += "<td>" + rowData.speed + "</td>";
     trElement += "</tr>";
