@@ -73,8 +73,6 @@ public class TrainResource {
                     LocationRequest locationRequest) {
         log.debug("Location of trainId {} = {}", trainId, locationRequest.toString());
 
-
-
         LocationResponse locationResponse = trainTimetableService.update(trainId, locationRequest);
         return ResponseEntity.ok(locationResponse.getTrainId());
     }

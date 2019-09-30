@@ -31,6 +31,7 @@ public class TrainTimetableService {
         for (Train train : trainRepository.findAll()) {
             returnList.add(buildLocationResponseFromTrainModel(train));
         }
+
         return returnList;
     }
 
@@ -42,8 +43,8 @@ public class TrainTimetableService {
         } else {
             throw Problem.valueOf(Status.NOT_FOUND);
         }
-        return buildLocationResponseFromTrainModel(train);
 
+        return buildLocationResponseFromTrainModel(train);
     }
 
     public LocationResponse update(Long trainId, LocationRequest locationRequest) {
@@ -92,5 +93,4 @@ public class TrainTimetableService {
                 .speed(train.getSpeed())
                 .build();
     }
-
 }
